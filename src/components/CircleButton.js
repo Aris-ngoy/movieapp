@@ -7,9 +7,9 @@ const CircleButton = (props) =>{
     const styles = useStyleSheet(themeStyles)
     const theme  =  useTheme()
 
-    const { width, height, fill, iconName, iconWidth, iconHeight, color } = props
+    const { width, height, fill, iconName, iconWidth, iconHeight, color, onPress } = props
 
-    return(<TouchableOpacity activeOpacity={.5} onPress={()=>{  console.log("Pressed !") }}>
+    return(<TouchableOpacity activeOpacity={.5} onPress={onPress}>
         <View style={[styles.root, { width : width, height : height, backgroundColor : theme[color] }]}>
             <Icon fill={fill} 
                 style={{ width : iconWidth, height : iconHeight }} 
@@ -24,9 +24,10 @@ CircleButton.defaultProps={
     width : 50, height : 50,
     fill : 'white', 
     iconName : 'home-outline', 
-    iconWidth : 30, 
-    iconHeight : 30,
-    color : 'color-primary-400' 
+    iconWidth : 26, 
+    iconHeight : 26,
+    color : 'color-primary-400' ,
+    onPress : ()=>{}
 }
 
 const themeStyles = StyleService.create({
