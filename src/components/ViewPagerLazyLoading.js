@@ -12,6 +12,7 @@ const ViewPagerLazyLoading = () =>{
     const shouldLoadComponent = (index) => index === selectedIndex;
 
     return(<ViewPager
+        swipeEnabled={false}
         selectedIndex={selectedIndex}
         shouldLoadComponent={shouldLoadComponent}
         onSelect={index => setSelectedIndex(index)}>
@@ -30,9 +31,11 @@ export default ViewPagerLazyLoading;
 const styles = StyleSheet.create({
     view: {
       height : '100%',
-      alignItems: 'center',
-      justifyContent: 'center',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
       margin : 10,
-      backgroundColor : 'transparent'
+      backgroundColor : 'transparent',
+      borderTopLeftRadius : 20,
+      borderTopRightRadius:20,
     },
   });

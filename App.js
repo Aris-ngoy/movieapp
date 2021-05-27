@@ -19,7 +19,7 @@ const App = () =>{
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Detail" component={DetailScreen} />
+            <Stack.Screen name="Detail" component={DetailScreen} options={{ headerShown: false }} />
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>
